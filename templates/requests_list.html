@@ -1,0 +1,17 @@
+{% extends 'base.html' %}
+
+{% block title %}Список заявок{% endblock %}
+
+{% block main %}
+<main>
+    {% for request in requests %}
+    <article>
+        <p>Название курса: "{{ request.course.title }}"</p>
+        <p>Желаемое время старта {{ request.prefered_start_date }}</p>
+        <p>Заявка создана {{ request.created_at }}</p>
+    </article>
+    {% empty %}
+    <p>Заявок еще нет</p>
+    {% endfor %}
+</main>
+{% endblock %}

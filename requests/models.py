@@ -26,7 +26,7 @@ class Request(models.Model):
         CASH = 'CASH', 'Cash'
         CARD = 'CARD', 'Card'
 
-    # contact = models.ForeignKey("Contact", on_delete=models.CASCADE)
+    contact = models.ForeignKey("Contact", on_delete=models.CASCADE)
     course = models.ForeignKey(Course, on_delete=models.CASCADE)
     status = models.CharField(choices=Status, default=Status.PENDING)
     payment = models.CharField(choices=Payment)
